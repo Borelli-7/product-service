@@ -1,0 +1,22 @@
+type Query{
+    productList: [ProductResponse]
+}
+
+type Mutation {
+    createProduct(productRequest: ProductRequest): ProductResponse
+    updateProduct(productId: String, productRequest: ProductRequest) : ProductResponse
+}
+
+type ProductResponse {
+    productId: String,
+    productName: String,
+    productDesc: String,
+    productPrice: Float
+}
+
+input ProductRequest {
+    productName: String,
+    productDesc: String,
+    productPrice: Float
+}
+
